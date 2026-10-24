@@ -1,0 +1,40 @@
+name: data-quality-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: python -m pytest -q
+
+      - name: Generate synthetic data with planted errors
+        run: PYTHONPATH=src python -m dqkit generate
+
+      - name: Run the checker and compare with the answer key
+        run: PYTHONPATH=src python -m dqkit check --answer-key data/answer_key/planted_errors.csv
+
+      - name: Confirm a clean dataset produces zero issues
+        run: |
+          PYTHONPATH=src python -m dqkit generate --clean --out data/clean
+          PYTHONPATH=src python -m dqkit check --data data/clean --out output_clean --fail-on-issues
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: discrepancy-reports
+          path: output/

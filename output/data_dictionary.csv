@@ -1,0 +1,15 @@
+Variable / Field Name,Form Name,Section Header,Field Type,Field Label,"Choices, Calculations, OR Slider Labels",Field Note,Text Validation Type OR Show Slider Number,Text Validation Min,Text Validation Max,Identifier?,Branching Logic (Show field only if...),Required Field?,Custom Alignment,Question Number (surveys only),Matrix Group Name,Matrix Ranking?,Field Annotation
+participant_id,participant_enrollment,,text,Participant ID,,,,,,,,y,,,,,Expected pattern: ^P\d{4}$
+birth_date,participant_enrollment,,text,Date of birth,,,date_ymd,1925-01-01,1960-12-31,y,,y,,,,,
+sex,participant_enrollment,,radio,Sex,"F, Female | M, Male",,,,,,,y,,,,,
+education_years,participant_enrollment,,text,Years of education,,,integer,0,25,,,y,,,,,
+enrollment_date,participant_enrollment,,text,Enrollment date,,,date_ymd,2015-01-01,2024-12-31,y,,y,,,,,
+visit_id,study_visit,,text,Visit ID,,,,,,,,y,,,,,Expected pattern: ^V\d{5}$
+visit_date,study_visit,,text,Visit date,,,date_ymd,2015-01-01,2026-12-31,y,,y,,,,,
+visit_number,study_visit,,text,Visit number,,,integer,1,6,,,y,,,,,
+orientation,cognitive_screen,,text,Orientation (0-10),,,integer,0,10,,,y,,,,,
+registration,cognitive_screen,,text,Registration (0-3),,,integer,0,3,,,y,,,,,
+attention,cognitive_screen,,text,Attention (0-5),,,integer,0,5,,,y,,,,,
+recall,cognitive_screen,,text,Recall (0-3),,,integer,0,3,,,y,,,,,
+language,cognitive_screen,,text,Language (0-9),,,integer,0,9,,,y,,,,,
+total_reported,cognitive_screen,,text,Total score as entered (0-30),,,integer,0,30,,,y,,,,,
