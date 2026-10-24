@@ -2,7 +2,7 @@
 
 `python -m dqkit dictionary` writes `output/data_dictionary.csv` from `rules/rules.yaml`, so the dictionary and the checks cannot drift apart.
 
-The file uses the standard REDCap data dictionary column headers (Variable / Field Name, Form Name, Field Type, Field Label, Choices, Text Validation Type, Min, Max, Identifier?, Required Field?, and so on). It has not been uploaded to a live REDCap project, so treat it as a draft layout.
+The file uses the standard REDCap data dictionary column headers (Variable / Field Name, Form Name, Field Type, Field Label, Choices, Text Validation Type, Min, Max, Identifier?, Required Field?, and so on). It was uploaded to a free REDCap demo project and imported with no errors or warnings (see the `redcap/` folder). It has not been used in a real study, so treat it as a tested starting layout, not a finished one.
 
 Mapping from rules to dictionary:
 

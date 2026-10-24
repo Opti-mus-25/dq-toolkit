@@ -1,0 +1,4 @@
+participant_id,birth_date,sex,education_years,enrollment_date,participant_enrollment_complete,visit_id,visit_date,visit_number,study_visit_complete,orientation,registration,attention,recall,language,total_reported,cognitive_screen_complete
+1,1945-10-11,M,16,2017-10-10,2,V00001,2017-11-10,1,2,9,3,4,2,8,26,2
+2,1945-10-10,M,16,2021-10-06,2,,,,0,,,,,,,0
+3,1958-05-21,F,16,2019-05-28,2,,,,0,,,,,,,0
